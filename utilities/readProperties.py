@@ -10,6 +10,7 @@ class ReadConfig:
     def getApplicationURL():
         url = config.get('common_info', 'baseURL')
         # Allan is a man
+        # Allan is a man 2
         return url
 
     @staticmethod
