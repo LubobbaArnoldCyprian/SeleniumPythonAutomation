@@ -9,3 +9,4 @@ def setup():
     # driver = webdriver.Chrome('/Users/carl/Desktop/Q.A/chromedriver')
     driver = webdriver.Chrome(ChromeDriverManager().install())
     return driver
+
