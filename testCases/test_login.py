@@ -14,12 +14,12 @@ class Test_001_Login:
     logger = LogGen.loggen()
 
     def test_homePageTitle(self, setup):
-        #self.logger.INFO("***** Test_001_Login *****")
-        #self.logger.INFO("**** Verifying Home Page Title *****")
+        self.logger.info("***** Test_001_Login *****")
+        self.logger.info("**** Verifying Home Page Title *****")
         self.driver = setup
-        #self.logger.INFO("***** Test_001_Login *****")
+        self.logger.info("***** Test_001_Login *****")
         self.driver.get(self.baseURL)
-        #self.logger.INFO("**** Verifying Home Page Title *****")
+        self.logger.info("**** Verifying Home Page Title *****")
         act_title = self.driver.title
         print(act_title)
         if act_title != "Your store. Login":
@@ -32,7 +32,7 @@ class Test_001_Login:
         self.driver.close()
 
     def test_login(self, setup):
-        #self.logger.INFO("**** verifying Login page ****")
+        self.logger.info("**** verifying Login page ****")
         self.driver = setup
         self.driver.get(self.baseURL)
         self.lp = LoginPage(self.driver)
@@ -43,11 +43,11 @@ class Test_001_Login:
         #self.driver.close()
         if act_title == "Dashboard / nopCommerce administration":
             assert True
-            #self.logger.INFO("**** login test is passed ****")
+            self.logger.info("**** login test is passed ****")
             self.driver.close()
         else:
             self.driver.save_screenshot(".//Screenshots/" + "self.test_homePageTitle.png")
-            #self.logger.error("**** login test is failed ****")
+            self.logger.error("**** login test is failed ****")
             self.driver.close()
             assert False
 
